@@ -10,12 +10,12 @@ foreach ($http_response_header AS $line)
     {
         if (preg_match('/Content-Disposition: attachment; filename="([\w|\.]+)"/', $line, $match) > 0)
         {
-            $filename = $match[1];
+            $filename = $match[1]; //获取默认下载文件名称
         }
     }
     elseif (strpos($line, 'ETag:') !== FALSE)
     {
-        $value = explode('sha1-', $line)[1];
+        $value = explode('sha1-', $line)[1]; // ETag: sha1-b7c2296a2941c6f6a74726ea4dbf88509b91fda8
 
         if ($value == sha1($data))
         {
