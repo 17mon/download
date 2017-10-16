@@ -1,6 +1,6 @@
 <?php
 
-$data = file_get_contents('https://user.ipip.net/download.php?token=TOKEN');
+$data = file_get_contents('https://user.ipip.net/download.php?token=TOKEN');//注意要替换成自己的下载地址，不同文件格式地址不同。
 
 $verified = FALSE;
 $filename = '';
